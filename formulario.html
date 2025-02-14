@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="es-es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario</title>
+</head>
+<body>
+    <form method="get" action="formulario.html">
+        <p>
+            <label for="nombre">Nombre</label> <br>
+            <input type="text" name="nombre" placeholder="Nombre">
+        </p>
+        <p>
+            <label for="apellidos">Apellidos</label> <br>
+            <input type="text" name="apellidos" placeholder="Apellidos">
+        </p>
+        <p>
+            <label for="email">Email *</label> <br>
+            <input type="email" name="email" placeholder="ejemplo@dominio.com" required>
+        </p>
+        <p>
+            <label for="password">Contraseña *</label> <br>
+            <input type="password" name="password" placeholder="Contraseña" required>
+            <span>La contraseña debe tener al menos 8 caracteres</span>
+        </p>
+        <p>
+            <label for="LinkedInURL"></label>
+            <input type="url" id ="LinkedInURL" name="sitioWeb" placeholder="http://www.ejemplo.com">
+        </p>
+        <p>
+            <label for="fechaNacimiento">Fecha de Nacimiento</label> </label>
+            <input type="date" name="fechaNacimiento">
+        </p>
+        <p>
+            <input type="time" name="horaCita">
+        </p>
+        <p>
+            <input type="datetimeLical" name="fechaHora">
+        </p>
+        <p>
+            <label for="edad">Edad</label>
+            <input type="number" name="edad" min="18" max="99" step="5"></input>
+        </p>
+        <p>
+            <input type="tel" name="telefono" placeholder="tu telefono"></input>
+        </p>
+        <label>
+        <input type="checkbox" name="terminos" required>Acepto los <a href="https://es.lipsum.com/privacy">terminos y condiciones</a></input> <!--Acepto los términos 
+        y condiciones-->
+    </label>
+        <p>
+            <button type = "submit">Enviar Formulario</button>
+        </p>
+        <p>
+            <h4>Géneros musicales</h4>
+            <ul>
+                    <li><label><input type="checkbox" name="genero" value="rock">Rock</label></li>
+                    <li><label><input type="checkbox" name="genero" value="rock">Techno</label></li>   
+                    <li><label><input type="checkbox" name="genero" value="rock">Hip Hop</label></li>
+                    <li><label><input type="checkbox" name="genero" value="rock">Pop</label></li>
+                </li>
+            </ul>
+        </p>
+     <p>
+        <ul>
+        <li><input type="radio" name="sexo" value="hombre">Hombre</input></li>
+        <li><input type="radio" name="sexo" value="femenino">Femenino</input></li>
+    </ul> 
+    </p>   
+    <p>
+        <input type="file" name="archivo">
+    </p>  
+    <p>
+        <input type="range" name="volumen" min="0" max="10" step="1">
+    </p> 
+    <p>
+        <input type="color" name="color">
+    </p>
+    <p>
+        <label for="pais">Selecciona tu pais</label>
+        <select id="pais" name="pais">
+            <option value="es">España</option>
+            <option value="mx">México</option>
+            <option value="co">Colombia</option>
+            <option value="us">Estados Unidos</option>
+            <option value="pe">Perú</option>
+    </p>
+    <p>
+        <label for="ciudad">Selecciona tu ciudad</label>
+        <select id="ciudad" name="ciudad">
+            <optgroup label="España">
+                <option value="bcn">Barcelona</option>
+                <option value="madrid">Madrid</option>
+                </optgroup>
+            <option value="madrid">Madrid</option>
+            <option value="cdmx">Ciudad de México</option>
+            <option value="bogota">Bogotá</option>
+            <option value="ny">Nueva York</option>
+            <option value="lima">Lima</option>
+        </select>
+    </p>
+    <p>
+        <br><label for="mensaje">Escribe tu mensaje aquí</label></br>
+        <textarea name="mensaje" placeholder="Escribe el mensaje" rows="4" cols="50">
+            </textarea>
+    </p>
+    <p>
+        <fieldset>
+            <legend>Selecciona tu nivel de estudios</legend>
+            <input type="radio" name="estudios" value="sinEstudios">Sin estudios</input>
+            <input type="radio" name="estudios" value="primaria">Primaria</input>
+            <input type="radio" name="estudios" value="secundaria">Secundaria</input>
+            <input type="radio" name="estudios" value="universitarios">Universitarios</input>
+    </p>
+    <p>
+        <label for="ciudad">Selecciona tu ciudad</label>
+        <input list="ciudades" name="ciudad">
+        <datalist id="ciudades">
+            <option value="Barcelona"></option>
+            <option value="Madrid"></option>
+            <option value="Ciudad de México"></option>
+            <option value="Bogotá"></option>
+            <option value="Nueva York"></option>
+            <option value="Lima"></option>
+    </p>
+    <p>
+        <input type="file" capture="user" aceept="image/* , gif, avi" name="avatar" id ="avatar">
+    </p>
+</form>
+     
+</body>
+</html>
