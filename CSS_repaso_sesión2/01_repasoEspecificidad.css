@@ -1,0 +1,41 @@
+p { color: blue; }
+/* Especificidad: 1 (1 elemento) */
+
+.texto { font-size: 16px; }
+/* Especificidad: 10 (1 clase) */
+
+#principal { background-color: lightgray; }
+/* Especificidad: 100 (1 ID) */
+
+input[type="text"] { border: 1px solid black; }
+/* Especificidad: 11 (1 elemento + 1 atributo) */
+
+article p { line-height: 1.5; }
+/* Especificidad: 2 (2 elementos) */
+
+main > section { padding: 10px; }
+/* Especificidad: 2 (2 elementos) */
+
+h1 + p { font-weight: bold; }
+/* Especificidad: 2 (2 elementos) */
+
+h2 ~ p { color: darkgreen; }
+/* Especificidad: 2 (2 elementos) */
+
+.card.destacada { border: 2px solid red; }
+/* Especificidad: 20 (2 clases) */
+
+#contenedor .caja strong { text-transform: uppercase; }
+/* Especificidad: 111 (1 ID + 1 clase + 1 elemento) */
+
+button:hover { background-color: yellow; }
+/* Especificidad: 11 (1 elemento + 1 pseudo-clase) */
+
+p::first-letter { font-size: 2em; }
+/* Especificidad: 2 (1 elemento + 1 pseudo-elemento) */
+
+* + h3 { text-decoration: underline; }
+/* Especificidad: 1 (1 elemento, el * no cuenta) */
+
+html body main #app .contenedor .elemento h2 { font-style: italic; }
+/* Especificidad: 125 (1 ID + 2 clases + 5 elementos) */
