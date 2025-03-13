@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="es-ES">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Encabezados Decorados</title>
+  <link rel="stylesheet" href="styles.css">
+
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 50px;
+    }
+
+    .decorado {
+      position: relative;
+      padding-bottom: 10px;
+      margin-bottom: 20px;
+    }
+    .decorado::after {
+      content: ''; /* Obligatorio para que se muestre el pseudo-elemento */
+      position:relative;
+      bottom: 0;
+      left: 0;
+      width: 100px;
+      height: 3px;
+      background-color: black;
+    }
+    .icono {
+      position: relative;
+      display: flex; /* Alinea el icono con el texto */
+      align-items: center; /* Centra verticalmetne el icono*/
+      gap: 10px; /* Espacio entre el icono y el texto */
+    }
+    .icono img {
+      width: 24px;
+      height: 24px;
+    }
+  </style>
+
+</head>
+
+<body>
+  <h1 class="decorado">Título Principal</h1>
+  <h2 class="icono"><img src="./imagenes/favicon (1).png" alt="Decoración" class="icono"> Subtítulo Secundario</h2>
+</body>
+
+</html>

@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fixed y Sticky</title>
+    <style>
+        /* COMPLETAR: Estilos generales */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+        }
+
+        /* COMPLETAR: Menú lateral fijo */
+        .menu {
+            /* El menú tiene que quedarse fijo en la izquierda */
+            box-sizing: border-box; /* Incluye el padding en el ancho */
+            position: fixed; /* Lo fija en la pantalla */
+            top: 0; /* Lo fija arriba */
+            left: 0; /* Lo fija a la izquierda */
+            width: 200px; /* Ancho fijo */
+            height: 100vh; /* Altura fija */
+            background-color: #333; /* Fondo oscuro */
+            color: white; /* Texto blanco */
+            padding: 20px; /* Añade un poco de espacio alrededor */
+        }
+
+        /* COMPLETAR: Contenedor principal */
+        .contenido {
+            /* El contenido debe tener un padding y un ancho máximo */
+            padding: 20px; /* Añade un poco de espacio alrededor */
+            max-width: 800px; /* Ancho máximo */
+            margin: 0 auto; /* Centra el contenido */
+            margin-left: 240px; /* deja un pesacio para el menú (manías mías)*/
+        }
+
+        /* COMPLETAR: Encabezado sticky */
+        .sticky-header {
+            /* Este encabezado debe quedarse pegado arriba cuando se haga scroll */
+            position: sticky; /* Lo fija arriba */
+            top: 0; /* Lo fija arriba */
+            background-color: lightgray; /* Fondo gris claro */
+            padding: 10px; /* Añade un poco de espacio alrededor */
+            font-size: 1.2em; /* Tamaño de letra grande */
+        }
+    </style>
+</head>
+<body>
+    <div class="menu">
+        <h2>Menú</h2>
+        <ul>
+            <li>Inicio</li>
+            <li>Acerca de</li>
+            <li>Contacto</li>
+        </ul>
+    </div>
+
+    <div class="contenido">
+        <h1>Ejemplo de Fixed y Sticky</h1>
+        <p>Haz scroll para ver cómo funciona el sticky header.</p>
+
+        <h2 class="sticky-header">Encabezado Pegajoso</h2>
+
+        <p>Lorem ipsum dolor sit amet...</p>
+        <p style="height: 1200px;">(Mucha más información para hacer scroll)</p>
+    </div>
+</body>
+</html>
