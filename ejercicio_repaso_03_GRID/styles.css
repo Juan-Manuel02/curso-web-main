@@ -1,0 +1,105 @@
+/* Reset básico */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Estilos generales */
+.page {
+  min-height: 100vh;
+  display: grid;
+  grid-template-rows: 200px 1fr 100px;
+  grid-template-columns: 1fr 3fr 1fr;
+  grid-template-areas: 
+    "header header header"
+    "nav main aside"
+    "footer footer footer";
+  gap: 20px;
+  padding: 20px;
+  margin: 0 auto;
+  max-width: 1200px;
+  background-color: #ffffff;
+}
+
+/* Header */
+header {
+  text-align: center;
+  padding: 20px;
+  background-color: #3498db;
+  color: white;
+  grid-area: header;
+}
+
+nav {
+  grid-area: nav;
+  background-color: #2ecc71;
+  padding: 20px;
+  border-radius: 5px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+main {
+  background-color: #ecf0f1;
+  grid-area: main;
+}
+
+aside {
+  background-color: #e74c3c;
+}
+
+footer {
+  grid-area: footer;
+  text-align: center;
+  padding: 20px;
+  background-color: #3498db;
+  color: white;
+}
+
+/* ------- MEDIA QUERY PARA MÓVILES ------- */
+@media (max-width: 500px) {
+  .page {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
+    grid-template-areas: 
+      "header"
+      "nav"
+      "main"
+      "aside"
+      "footer";
+  }
+
+  header{
+    grid-area: header;
+    text-align: center;
+    padding: 20px;
+    background-color: #3498db;
+    color: white;
+  }
+
+  nav {
+    grid-area: nav;
+    background-color: #2ecc71;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  }
+
+  main {
+    grid-area: main;
+  background-color: #ecf0f1;
+  padding: 20px;
+  border-radius: 5px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  }
+
+  aside {
+    grid-area: aside;
+    background-color: #e74c3c;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    position: static;
+  }
+} 
+
