@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="es-ES">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,27 +7,19 @@
 </head>
 <body>
 
-    <img alt="html5" src="./imagenes/html_icon.png">
+    <img alt="html5">
 
     <!-- completar para que cargue dependiendo del tamaño -->
-
-    <img src="./imagenes/html_icon.png" alt="Imagen con error"
-     srcset="./imagenes/html_icon.png 1024w, ./imagenes/html_icon_sm.png 512w"
-    sizes="(max-width: 800px) 400px, 800px">
+    <img imgsrc="html_icon.png" alt="Imagen con error">
 
     <!-- corregir y comprobar por tipo -->
     <picture>
-        <source src="./imagenes/html_icon.webp" type="imagen/web">
-       <!-- <source src="./imagenes/html_icon.png" type="imagen/png"> esto es opcional es 
-        para ver si carga una u otra -->
-        <img src="./imagenes/html_icon.png" alt="Imagen predeterminada">
+        <img src="./images/html_icon.png" alt="Imagen predeterminada">
     </picture>
 
     <!-- corregir y comprobar tanto el tamaño como el tipo -->
     <picture>
-        <source src="./imagenes/html_icon.webp" type="imagen/web">
-        <source src="./imagenes/html_icon_sm.png" media="(max-width: 800px)">
-        <img src="./imagenes/html_icon.png" alt="Imagen de respaldo">
+        <img src="./images/html_icon.png" alt="Imagen de respaldo">
     </picture>
 
 </body>
