@@ -26,3 +26,5 @@ contador.incrementar();
 contador.decrementar();
 contador.incrementar();
 contador.incrementar();
+contador.decrementarPorNumero(10);
+contador.mostrar();
