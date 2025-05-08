@@ -11,10 +11,27 @@
   <script>
     const segundosHora = 3600;
     const segundosMinuto = 60;
-
+    
     let segundosTotales = Number(prompt("Introduce el número de segundos: "));
+    
+    let horasDecimal = Math.floor(segundosTotales / segundosHora * 100) / 100;
+    let minutosDecimal = Math.floor(segundosTotales / segundosMinuto) / 100;
+    let segundosDecimal = segundosTotales;
+
+    let horas = 0;
+    let minutos = 0;
+    let segundos = 0;
+    horas = Math.floor(segundosTotales / segundosHora);
+    minutos = Math.floor((segundosTotales % segundosHora) / segundosMinuto);
+    segundos = Math.floor(segundosTotales % segundosMinuto);
 
     // hay que obtener el número de horas, minutos y segundos a partir de los segundos totales, primero solo la conversión.
+    // TO DO
+    
+    // para el formato reloj, hay que calcular los segundos totales a horas, minutos y segundos
+    // para ello hay que redondear, convirtiendo a entero los segundos totales a horas, minutos y segundos
+    // hay que tener en cuenta que para calcular los minutos y segundos tendremos que usar los segundos "que sobran"
+    // TIP: con la función Math.floor() redondeamos hacia abajo el resultado de la división
     // TO DO
 
     // para el formato reloj, hay que calcular los segundos totales a horas, minutos y segundos
@@ -22,6 +39,7 @@
     // hay que tener en cuenta que para calcular los minutos y segundos tendremos que usar los segundos "que sobran"
     // TIP: con la función Math.floor() redondeamos hacia abajo el resultado de la división
     // TO DO
+    
 
     alert(`horas: ${horasDecimal}\nminutos: ${minutosDecimal}\nsegundos: ${segundosDecimal}
     \n\nEn formato reloj: ${horas}:${minutos}:${segundos}`);

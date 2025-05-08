@@ -3,10 +3,46 @@
 <head>
   <meta charset="UTF-8" />
   <title>Usuarios por Rol</title>
-  <style>
-    .admin { color: red; font-weight: bold; }
-    .editor { color: blue; }
-    .viewer { color: gray; }
+    <style>
+      /* Estilos generales de la lista */
+      #userList ul {
+          list-style: none;
+          padding: 20px;
+          background: #f5f5f5;
+          border-radius: 8px;
+          width: 300px;
+      }
+  
+      /* Estilos comunes para todos los items */
+      #userList li {
+          margin: 10px 0;
+          padding: 10px 15px;
+          border-radius: 5px;
+          background: white;
+          box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+          transition: transform 0.2s;
+      }
+  
+      #userList li:hover {
+          transform: translateX(10px);
+      }
+  
+      /* Estilos específicos por rol */
+      .admin {
+          color: #dc3545;
+          font-weight: bold;
+          border-left: 4px solid #dc3545;
+      }
+  
+      .editor {
+          color: #0d6efd;
+          border-left: 4px solid #0d6efd;
+      }
+  
+      .viewer {
+          color: #6c757d;
+          border-left: 4px solid #6c757d;
+      }
   </style>
 </head>
 <body>
@@ -19,25 +55,35 @@
       { name: "Luis", role: "editor" },
       { name: "Carlos", role: "viewer" },
       { name: "Marta", role: "editor" },
-      { name: "Sofía", role: "admin" }
+      { name: "Sofía", role: "admin"}, 
+      { name: "Pedro", role: "viewer"}
+      
     ];
 
     // A partir de aquí hay una serie de errores en el código
-    const htmlContent = "<ul>";
+    // 1. La variable htmlContent se inicializa como un string vacío, pero debería ser un string con la etiqueta <ul>
+    // 2. El bucle for tiene que recorrer el array de usuarios y no el número de usuarios, por lo que el bucle for tiene que empezar en 0
+    // 3. El bucle for tiene que recorrer el array de usuarios y no el número de usuarios, por lo que el bucle for tiene que terminar en users.length - 1
+    // 4. La variable htmlContent se vuelve a inicializar en cada iteración del bucle for, por lo que solo se mostrará el último usuario
+    // el bucle for tiene que recorrer el array de usuarios
+    // y no el número de usuarios, por lo que el bucle for tiene que empezar en 0
+    // y no en 1, y el bucle for tiene que recorrer el array de usuarios
 
-    for (let i = 1; i <= users.length; i--) {
+    let htmlContent = "<ul>"; 
+
+    for (let i = 0; i < users.length; i++) { 
       const user = users[i];
 
       if (user.role === "admin") {
-        htmlContent = `<li class="admin">${user.name} (Administrador)</li>`;
-      } if (user.role === "editor") {
-        htmlContent = `<li class="editor">${user.name} (Editor)</li>`;
+        htmlContent += `<li class="admin">${user.name} (Administrador)</li>`;
+      }else if (user.role === "editor") {
+        htmlContent += `<li class="editor">${user.name} (Editor)</li>`;
       } else {
-        htmlContent = `<li class="viewer">${user.name} (Lector)</li>`;
+        htmlContent += `<li class="viewer">${user.name} (Lector)</li>`;
       }
     }
 
-    htmlContent = "</ul>";
+    htmlContent += "</ul>";
 
     // inyectar el contenido HTML en el div con id "userList"
     document.getElementById("userList").innerHTML = htmlContent;
