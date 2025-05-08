@@ -16,15 +16,15 @@ const mascota = {
             console.log(`${this.nombre} no puede jugar porque está cansado.`);
         }else{
             this.energia -= minutos * 2;
-            if (this.energia < 0){
-                this.energia = 0;
+            if (this.energia < 0){ 
+                this.energia = 0;  
             }
             console.log(`${this.nombre} ha jugado ${minutos} minutos.`);
         }
     },
     dormir: function(horas){
         if (this.energia >= MAX_ENERGIA){
-            console.log(`${this.nombre} no puede dormir porque está descansado.`);
+            console.log(`${this.nombre} no puede dormir porque está con mucha energía.`);
         }else{
             this.energia += horas * 10;
             if (this.energia > MAX_ENERGIA){
