@@ -8,3 +8,23 @@ Después, hay que generar dos funciones que transformen las palabras:
 
 Para esto, revisa la función split asociada a las cadenas.
 */
+
+function transformarFrase(frase, transformador) {
+     //frase = frase.replace (/\s+/g, '').trim();
+    // separo la frase en palabras
+    let palabras = frase.split(" ");
+    for (let i = 0; i < palabras.length; i++) {  
+      palabras[i] = transformador(palabras[i]) + " "; // llamo a la función transformadora
+    }
+    return palabras.join(" "); // vuelvo a unir las palabras
+}
+function transformarSimbolos(palabra){
+    return `<${palabra}>`; // Se añaden los simbolos
+}
+console.log(transformarFrase("El cielo es azul", transformarSimbolos));
+
+/* Funciones que transformen las palabras
+function transformarMayusculas(palabra) {
+    return palabra.toUpperCase(); // Se ponen las palabras en mayusculas 
+}*/
+
