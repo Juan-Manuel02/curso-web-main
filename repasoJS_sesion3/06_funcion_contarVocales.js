@@ -4,11 +4,11 @@ Crea una función que cuente cuántas vocales hay en una palabra.
 function contarVocales (palabra) {
     // Iniciamos el contador de vocales
     let contador = 0;
-    // Definimos las vocales
+    // Se definen las vocales
     const vocales = "aeiouAEIOU";
-    // Recorremos las letras
+    // Aquí recorremos cada letra de la palabra
     for (let i = 0; i < palabra.length; i++) {
-        // Comprobamos si la letra actual es una vocal
+        // Esto comprueba si la letra actual es una vocal
         if (vocales.includes(palabra[i])) {
             contador++;
         }
