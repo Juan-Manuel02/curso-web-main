@@ -18,13 +18,18 @@ function transformarFrase(frase, transformador) {
     }
     return palabras.join(" "); // vuelvo a unir las palabras
 }
-function transformarSimbolos(palabra){
+function añadirSimbolo(palabra){
     return `<${palabra}>`; // Se añaden los simbolos
 }
-console.log(transformarFrase("El cielo es azul", transformarSimbolos));
+function añadirSimbolo2(palabra){
+    return `{${palabra}}`;
+}
+console.log(transformarFrase("El cielo es azul", añadirSimbolo));
+console.log(transformarFrase("El cielo es azul", añadirSimbolo2));
 
-/* Funciones que transformen las palabras
-function transformarMayusculas(palabra) {
-    return palabra.toUpperCase(); // Se ponen las palabras en mayusculas 
-}*/
+function transformarMayusculas (palabra){
+    return palabra.toUpperCase();
+}
+console.log(transformarFrase("El cielo es azul", transformarMayusculas));
+
 
