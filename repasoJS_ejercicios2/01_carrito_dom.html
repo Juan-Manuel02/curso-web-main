@@ -12,6 +12,25 @@
     <h2>Productos en el carrito:</h2>
     <!-- Aquí se mostrarán los productos en una tabla -->
     <p>Total: $<span id="total">0</span></p>
+    <table id="tabla-carrito">
+      <thead>
+        <tr>
+          <th>Producto</th>
+          <th>Precio</th>
+          <th>Cantidad</th>
+          <th>Total</th>
+        </tr>
+      </thead>
+      <tbody id="cuerpo-tabla">
+        <!-- Aquí se agregarán las filas de productos -->
+      </tbody>
+      <tfoot>
+        <tr>
+          <td colspan="3">Total General</td>
+          <td id="total-general">$0</td>
+        </tr>
+      </tfoot>
+    </table>
   </div>
 
   <script src="01_carrito_dom.js"></script>
