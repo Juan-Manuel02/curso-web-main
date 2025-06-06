@@ -20,11 +20,11 @@
 // Vamos a crear una función que escriba el número en el input.
 
 document.addEventListener("DOMContentLoaded", () => {
-    const input = document.getElementById("resultado");
+    const input = document.getElementById("pantalla");
     const botonesNumeros = document.querySelectorAll(".numero");
     const botonLimpiar = document.getElementById("limpiar");
-    const botonesOperaciones = document.querySelectorAll("operaciones");
-    const botonResultado = document.getElementById("resultado-boton");
+    const botonesOperaciones = document.querySelectorAll(".operacion");
+    const botonResultado = document.getElementById("igual");
 
     let numeroActual = ""; // Variable para almacenar el número actual
     let operacion = null; // para saber que operación se va a hacer  
@@ -52,7 +52,7 @@ document.addEventListener("DOMContentLoaded", () => {
         // Guardar la operación seleccionada
         operacion = operacionSeleccionada;
         // Guardar el número actual en el resultado
-        numeroAnterior = parseFloat(numeroActual);
+        resultado = parseFloat(numeroActual);
         // Limpiar el número actual
         numeroActual = "";
         // Actualizar el input con el resultado
