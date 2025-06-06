@@ -1,39 +1,58 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
   <meta charset="UTF-8">
+  <title>Carrito DOM</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Carrito</title>
   <link rel="stylesheet" href="01_carrito_dom.css">
 </head>
 <body>
-  <h1>Carrito de Compras</h1>
+  <h1>🛒 Carrito de Compras</h1>
   <div id="carrito">
-    <h2>Productos en el carrito:</h2>
-    <!-- Aquí se mostrarán los productos en una tabla -->
-    <p>Total: $<span id="total">0</span></p>
-    <table id="tabla-carrito">
+    <h2>Productos en el carrito</h2>
+    <table aria-label="Tabla de productos en el carrito">
       <thead>
         <tr>
-          <th>Producto</th>
+          <th>Nombre</th>
           <th>Precio</th>
           <th>Cantidad</th>
           <th>Total</th>
         </tr>
       </thead>
       <tbody id="cuerpo-tabla">
-        <!-- Aquí se agregarán las filas de productos -->
+        <!-- Los productos se insertan aquí dinámicamente -->
       </tbody>
-      <tfoot>
-        <tr>
-          <td colspan="3">Total General</td>
-          <td id="total-general">$0</td>
-        </tr>
-      </tfoot>
     </table>
+    <div class="total-container">
+      <p><span style="font-weight:400; color:var(--color-text-light);">Total general:</span> <span id="total-general">$0.00</span></p>
+      <p><span style="font-weight:400; color:var(--color-text-light);">Total:</span> <span id="total">0.00</span></p>
+    </div>
+    <div class="carrito-actions">
+      <button id="actualizar-carrito" class="btn" title="Actualizar la lista de productos">Actualizar carrito</button>
+      <button id="limpiar-carrito" class="btn btn-danger" title="Vaciar todo el carrito">Limpiar carrito</button>
+      <button id="agregar-producto" class="btn" title="Agregar un nuevo producto">Agregar producto</button>
+      <button id="eliminar-producto" class="btn btn-danger" title="Eliminar un producto seleccionado">Eliminar producto</button>
+      <button id="calcular-total" class="btn" title="Calcular el total actual">Calcular total</button>
+      <button id="mostrar-total-general" class="btn" title="Mostrar el total general">Mostrar total general</button>
+    </div>
   </div>
-
   <script src="01_carrito_dom.js"></script>
-  
+  <style>
+    /* Mejora visual para el contenedor de acciones */
+    .carrito-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 18px;
+      justify-content: flex-end;
+    }
+    @media (max-width: 600px) {
+      .carrito-actions {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 8px;
+      }
+    }
+  </style>
 </body>
 </html>
