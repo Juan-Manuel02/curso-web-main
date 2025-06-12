@@ -46,7 +46,26 @@ let carrito = {
 
 carrito.agregarProducto("bici",10);
 carrito.agregarProducto("estanteria",50);
-console.log(carrito.calcularTotal());
+
+let botonesProductos = document.getElementsByClassName("producto");
+for (let botonProducto of botonesProductos) {
+    botonProducto.addEventListener("click", function() {
+        let nombreProducto = this.querySelector(".nombre-producto").textContent;
+        let precioProducto = parseFloat(this.querySelector(".precio-producto").textContent);
+        botonProducto.addEventListener("click", () => {
+            carrito.agregarProducto(nombreProducto, precioProducto);
+            carrito.mostrarProductos();
+            let spanTotal = document.createElement("span");
+            spanTotal.textContent = `El precio total del carrito son ${carrito.calcularTotal()}€`;
+            document.body.appendChild(spanTotal);
+        });
+    });
+}
+
+<button class ="producto">
+    <div>Producto <span class ="nombre-producto">Bicicleta</span>- Precio <span class ="precio-producto">10</span></div>
+</button>
+
 
 /* Ejemplo con DOM
 let sumaTotal = carrito.calcularTotal();
